@@ -16,18 +16,32 @@
 <script src="_ds/dap-design-system-621bb8ce-a7b0-4c39-99e0-64cc72db7bab/_ds_bundle.js"></script>
 <script src="./image-slot.js"></script>
 <style>
+  :root { --font-display:Helvetica,"Helvetica Neue",Arial,sans-serif !important; --font-body:Helvetica,"Helvetica Neue",Arial,sans-serif !important; }
   * { box-sizing: border-box; }
-  body { margin:0; background:#fff; color:var(--dap-gray-700); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  body, body * { font-family:Helvetica,"Helvetica Neue",Arial,sans-serif !important; }
+  body { margin:0; background:#fff; color:var(--dap-gray-700); -webkit-font-smoothing:antialiased; }
   a { color:var(--dap-magenta); text-decoration:none; }
   a:hover { color:var(--dap-magenta-700); }
   image-slot { width:100%; height:100%; }
+  img { max-width:100%; }
+  html, body { overflow-x:hidden; }
+  @media (max-width:640px) {
+    .page-wrap { padding:0 20px !important; }
+    .bleed { margin-left:-20px !important; margin-right:-20px !important; padding-left:24px !important; padding-right:24px !important; }
+    .r-g4 { grid-template-columns:repeat(2,1fr) !important; }
+    .r-trend { grid-template-columns:repeat(2,1fr) !important; }
+    .r-carto, .r-cargos, .r-cargos-top, .r-g3, .r-contact, .r-auto { grid-template-columns:1fr !important; }
+    .r-cargos-top { gap:14px !important; }
+    .state-menu button { min-height:44px !important; }
+    .intro-p { font-size:16px !important; }
+  }
 </style>
 </helmet>
 
-<div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+<div class="page-wrap" style="max-width:1240px; margin:0 auto; padding:0 40px;">
 
   <!-- ============ HERO ============ -->
-  <header style="background:var(--dap-ink); color:#fff; margin:0 -40px; padding:64px 56px 58px; position:relative; overflow:hidden;">
+  <header class="bleed" style="background:var(--dap-ink); color:#fff; margin:0 -40px; padding:64px 56px 58px; position:relative; overflow:hidden;">
     <div style="position:absolute; top:-120px; right:-80px; width:340px; height:340px; border-radius:50%; background:var(--dap-wine); opacity:0.55;"></div>
     <div style="position:relative;">
       <img src="assets/dap-logo-white-transparent.png" alt="DAP — Despacho de Asuntos Públicos" style="height:52px; width:auto; display:block; margin-bottom:34px;">
@@ -42,12 +56,25 @@
   <!-- ============ SECCIÓN 1 — PANORAMA NACIONAL ============ -->
   
 
-  <!-- ============ SECCIÓN 2 — RESUMEN 17 ESTADOS ============ -->
-  <section style="padding:66px 0 20px;">
+  <!-- ============ ÍNDICE ============ -->
+  <nav style="padding:56px 0 8px;">
+    <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dap-magenta);">Índice</div>
+    <div style="width:56px; height:3px; background:var(--dap-magenta); margin:12px 0 24px;"></div>
+    <ol style="list-style:none; margin:0; padding:0; border-top:1px solid var(--dap-gray-200);">
+      <li style="border-bottom:1px solid var(--dap-gray-200);"><a href="#sec-1" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:var(--dap-ink); text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--dap-magenta); min-width:28px;">01</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Panorama nacional</span></a></li>
+      <li style="border-bottom:1px solid var(--dap-gray-200);"><a href="#sec-2" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:var(--dap-ink); text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--dap-magenta); min-width:28px;">02</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Las 17 entidades en juego</span></a></li>
+      <li style="border-bottom:1px solid var(--dap-gray-200);"><a href="#sec-3" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:var(--dap-ink); text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--dap-magenta); min-width:28px;">03</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Competitividad de MORENA</span></a></li>
+      <li style="border-bottom:1px solid var(--dap-gray-200);"><a href="#sec-4" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:var(--dap-ink); text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--dap-magenta); min-width:28px;">04</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Relaciones de apoyo</span></a></li>
+      <li style="border-bottom:1px solid var(--dap-gray-200);"><a href="#sec-5" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:var(--dap-ink); text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--dap-magenta); min-width:28px;">05</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Aspirantes destacados</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ SECCIÓN 1 — PANORAMA NACIONAL ============ -->
+  <section id="sec-1" style="padding:66px 0 20px; scroll-margin-top:24px;">
     <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 1 · Panorama nacional</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(30px,3.6vw,46px); line-height:1.02; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 0; max-width:20ch;">17 estados renuevan gubernatura en 2027</h2>
 
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px;">
+    <div class="r-g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px;">
       
       
       
@@ -55,7 +82,7 @@
     </div>
 
     <!-- Cartograma + leyenda -->
-    <div style="display:grid; grid-template-columns:1.55fr 1fr; gap:40px; margin-top:52px; align-items:start;">
+    <div class="r-carto" style="display:grid; grid-template-columns:1.55fr 1fr; gap:40px; margin-top:52px; align-items:start;">
       <div>
         <div style="font-family:var(--font-body); font-weight:700; font-size:14px; letter-spacing:0.02em; color:var(--dap-ink); margin-bottom:4px;">Cartograma — partido líder por entidad</div>
         <div style="font-size:13px; color:var(--dap-gray-500); margin-bottom:20px;">Esquema por entidad. El color indica el partido con mayor intención de voto; el porcentaje corresponde a esa fuerza. Las entidades sin elección aparecen en gris.</div>
@@ -85,8 +112,8 @@
       <div style="font-family:var(--font-body); font-weight:700; font-size:14px; letter-spacing:0.02em; color:var(--dap-ink); margin-bottom:4px;">La elección federal intermedia y los cargos locales en juego</div>
       <div style="font-size:13px; color:var(--dap-gray-500); margin-bottom:22px;">Además de las 17 gubernaturas, en 2027 se renueva la Cámara de Diputados y un amplio conjunto de cargos locales.</div>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
-        <div style="grid-column:span 3; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:14px;">
+      <div class="r-cargos" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+        <div class="r-cargos-top" style="grid-column:span 3; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:14px;">
           <div style="background:var(--dap-magenta); color:#fff; padding:24px 26px; display:flex; flex-direction:column; justify-content:center;">
             <div style="font-family:var(--font-display); font-weight:900; font-size:46px; line-height:0.95; letter-spacing:-0.02em;">500</div>
             <div style="font-size:14px; font-weight:600; margin-top:8px; line-height:1.35;">Diputaciones federales se renuevan en la Cámara de Diputados</div>
@@ -152,7 +179,7 @@
           <text x="465" y="72" text-anchor="middle" font-size="15" font-weight="800" fill="#9E2A4E">42%</text>
           <text x="860" y="95" text-anchor="end" font-size="15" font-weight="800" fill="#9E2A4E">39%</text>
         </svg>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px 20px; margin-top:20px; padding-top:18px; border-top:1px solid var(--dap-gray-100);">
+        <div class="r-trend" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px 20px; margin-top:20px; padding-top:18px; border-top:1px solid var(--dap-gray-100);">
           <sc-for list="{{ trend }}" as="l" hint-placeholder-count="8">
             <div style="display:flex; align-items:center; gap:10px;">
               <span style="{{ l.swStyle }}"></span>
@@ -165,10 +192,10 @@
 
     <!-- Cargos en juego 2027 -->
     
-  </section><p style="margin: 0; font-size: 10px">Encuesta Enkoll Mayo 2026</p><section style="padding:64px 0 20px;">
-    <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 2 · Las 17 entidades</x-import>
+  </section><p style="margin: 0; font-size: 10px">Encuesta Enkoll Mayo 2026</p><section id="sec-2" style="padding:64px 0 20px; scroll-margin-top:24px;">
+    <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 2 · Las 17 entidades en juego</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(28px,3.2vw,42px); line-height:1.04; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 6px;">Resumen por entidad</h2>
-    <p style="font-size:15px; color:var(--dap-gray-500); margin:0 0 26px; max-width:70ch;">Gobierno actual, aprobación y reparto de intención de voto por partido. La celda resaltada indica el partido con mayor intención de voto. Los aspirantes se listan en orden de posicionamiento.</p>
+    <p class="intro-p" class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 26px; max-width:70ch;">Gobierno actual, aprobación y reparto de intención de voto por partido. La celda resaltada indica el partido con mayor intención de voto. Los aspirantes se listan en orden de posicionamiento.</p>
 
     <div style="overflow-x:auto; border:1px solid var(--dap-gray-200);">
       <table style="width:100%; min-width:960px; border-collapse:collapse; font-family:var(--font-body);">
@@ -213,16 +240,16 @@
   </section>
 
   <!-- ============ SECCIÓN 3 — MORENA CONSOLIDA / COMPITE ============ -->
-  <section style="padding:64px 0 20px;">
-    <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 3 · Lectura MORENA</x-import>
+  <section id="sec-3" style="padding:64px 0 20px; scroll-margin-top:24px;">
+    <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 3 · Competitividad de MORENA</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(28px,3.2vw,42px); line-height:1.04; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 6px;">MORENA: dónde consolida y dónde compite</h2>
-    <p style="font-size:15px; color:var(--dap-gray-500); margin:0 0 30px; max-width:70ch;">Clasificación de las 17 entidades según el margen de MORENA. En las de <b style="color:var(--dap-ink);">competencia</b> el resultado está abierto; en las de <b style="color:var(--dap-ink);">consolidación</b> mantiene ventaja o el reto es interno.</p>
+    <p class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 30px; max-width:70ch;">Clasificación de las 17 entidades según el margen de MORENA. En las de <b style="color:var(--dap-ink);">competencia</b> el resultado está abierto; en las de <b style="color:var(--dap-ink);">consolidación</b> mantiene ventaja o el reto es interno.</p>
 
     <div style="display:flex; align-items:baseline; gap:12px; margin:8px 0 18px;">
       <span style="font-family:var(--font-display); font-weight:800; background:var(--dap-magenta); color:#fff; padding:3px 14px; font-size:15px;">COMPITE</span>
       <span style="font-size:14px; color:var(--dap-gray-500);">{{ compiteCount }} entidades con resultado abierto</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;">
+    <div class="r-auto" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;">
       <sc-for list="{{ compite }}" as="e" hint-placeholder-count="6">
         <div style="border:1px solid var(--dap-gray-200); border-top:4px solid; border-top-color:{{ e.color }}; padding:20px 22px;">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px;">
@@ -240,9 +267,9 @@
       <span style="font-family:var(--font-display); font-weight:800; background:var(--dap-ink); color:#fff; padding:3px 14px; font-size:15px;">CONSOLIDA</span>
       <span style="font-size:14px; color:var(--dap-gray-500);">{{ consolidaCount }} entidades con ventaja o disputa interna</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;">
+    <div class="r-auto" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;">
       <sc-for list="{{ consolida }}" as="e" hint-placeholder-count="11">
-        <div style="border:1px solid var(--dap-gray-200); border-top:4px solid; border-top-color:{{ e.color }}; padding:20px 22px;">
+        <div style="border:1px solid var(--dap-gray-200); border-top:4px solid; border-top-color:{{ e.color }}; padding:20px 22px; background:var(--dap-gray-50);">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px;">
             <div style="font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--dap-ink); letter-spacing:-0.01em;">{{ e.name }}</div>
             <div style="font-size:12px; font-weight:700; color:var(--dap-gray-500); font-variant-numeric:tabular-nums; white-space:nowrap;">{{ e.leadText }}</div>
@@ -256,11 +283,11 @@
   </section>
 
   <!-- ============ SECCIÓN 4 — RELACIONES DE APOYO ============ -->
-  <section style="padding:64px 0 20px;">
+  <section id="sec-4" style="padding:64px 0 20px; scroll-margin-top:24px;">
     <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 4 · Relaciones de apoyo</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(28px,3.2vw,42px); line-height:1.04; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 6px;">Padrinazgos políticos</h2>
-    <p style="font-size:15px; color:var(--dap-gray-500); margin:0 0 28px; max-width:70ch;">Aspirantes agrupados por el liderazgo nacional que los respalda.</p>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+    <p class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 28px; max-width:70ch;">Aspirantes agrupados por el liderazgo nacional que los respalda.</p>
+    <div class="r-g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
       <sc-for list="{{ padrinos }}" as="p" hint-placeholder-count="3">
         <div style="border:1px solid var(--dap-gray-200);">
           <div style="{{ p.headStyle }}; padding:16px 20px; font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:-0.01em;">{{ p.name }}</div>
@@ -278,13 +305,13 @@
   </section>
 
   <!-- ============ SECCIÓN 5 — GALERÍA DE ASPIRANTES ============ -->
-  <section style="padding:64px 0 40px;">
+  <section id="sec-5" style="padding:64px 0 40px; scroll-margin-top:24px;">
     <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 5 · Aspirantes destacados</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(28px,3.2vw,42px); line-height:1.04; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 6px;">Galería de aspirantes</h2>
-    <p style="font-size:15px; color:var(--dap-gray-500); margin:0 0 26px; max-width:70ch;">Elige una entidad en el menú para ver a sus tres aspirantes. La franja de color corresponde al partido de cada aspirante.</p>
+    <p class="intro-p" class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 26px; max-width:70ch;">Elige una entidad en el menú para ver a sus tres aspirantes. La franja de color corresponde al partido de cada aspirante.</p>
 
     <!-- Menú de estados -->
-    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;">
+    <div class="state-menu" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;">
       <sc-for list="{{ states }}" as="s" hint-placeholder-count="17">
         <button type="button" onClick="{{ s.onSelect }}" style="{{ s.tabStyle }}">{{ s.name }}</button>
       </sc-for>
@@ -297,7 +324,7 @@
         <div style="font-size:15px; color:var(--dap-gray-500);">{{ sel.name }}</div>
         <div style="flex:1; height:1px; background:var(--dap-gray-200);"></div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+      <div class="r-g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
         <sc-for list="{{ sel.asp }}" as="a" hint-placeholder-count="3">
           <div style="border:1px solid var(--dap-gray-200);">
             <div style="position:relative; width:100%; aspect-ratio:4 / 5; background:var(--dap-gray-100);">
@@ -324,7 +351,7 @@
   </section>
 
   <!-- ============ CONTACTO ============ -->
-  <section style="background:var(--dap-ink); color:#fff; margin:56px -40px 0; padding:58px 56px 56px; position:relative; overflow:hidden;">
+  <section class="bleed" style="background:var(--dap-ink); color:#fff; margin:56px -40px 0; padding:58px 56px 56px; position:relative; overflow:hidden;">
     <div style="position:absolute; bottom:-140px; right:-90px; width:340px; height:340px; border-radius:50%; background:var(--dap-wine); opacity:0.5;"></div>
     <div style="position:relative;">
       <div style="font-family:var(--font-body); font-weight:600; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--dap-magenta-bright);">Contáctanos</div>
@@ -337,7 +364,7 @@
         <span style="font-family:var(--font-display); font-weight:800; font-size:clamp(24px,2.8vw,36px); letter-spacing:-0.02em; line-height:1;">asuntospublicos.net</span>
       </a>
 
-      <div style="display:grid; grid-template-columns:repeat(2,minmax(280px,1fr)); gap:14px 44px; margin-top:30px; max-width:820px;">
+      <div class="r-contact" style="display:grid; grid-template-columns:repeat(2,minmax(280px,1fr)); gap:14px 44px; margin-top:30px; max-width:820px;">
         <a href="mailto:info@asuntospublicos.net" style="display:flex; align-items:center; gap:14px; color:#fff; padding:6px 0;">
           <span style="flex:none; width:30px; height:30px; display:flex; align-items:center; justify-content:center; color:var(--dap-magenta-bright);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg></span>
           <span style="display:flex; flex-direction:column;"><span style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.45);">Correo</span><span style="font-size:15px; font-weight:600;">info@asuntospublicos.net</span></span>
@@ -350,7 +377,7 @@
 
       <div style="height:1px; background:rgba(255,255,255,0.14); margin:34px 0 26px; max-width:820px;"></div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px 44px; max-width:820px;">
+      <div class="r-contact" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px 44px; max-width:820px;">
         <div style="display:flex; align-items:center; gap:13px;">
           <span style="flex:none; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#fff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg></span>
           <span style="display:flex; flex-direction:column;"><span style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Instagram</span><span style="font-size:14px; font-weight:600;">@dap_mex</span></span>
@@ -570,7 +597,7 @@ class Component extends DCLogic {
       'Guerrero':'La reforma anti-nepotismo vuelve más probable la candidatura de Beatriz Mojica; la contienda interna reúne a 13 aspirantes.',
       'Colima':'MORENA cierra una administración marcada por la inseguridad.',
       'Michoacán':'La pugna interna por la candidatura ya dividió a MORENA entre el grupo del gobernador Ramírez Bedolla y el del senador Raúl Morón.',
-      'Nayarit':'MORENA mantiene una amplia ventaja.',
+      'Nayarit':'MORENA con amplia ventaja. MC conserva una mejor percepción que el PAN, pero este cuenta con un activo político competitivo en la figura de la Sen. Ivideliza Reyes.',
       'Quintana Roo':'El senador Gino Segura y la alcaldesa Ana Patricia Peralta son los aspirantes más destacados a la gubernatura.',
       'Sinaloa':'El proceso interno comienza en un momento delicado para el gobierno por la acusación de EE.UU. contra Rocha Moya.',
       'Sonora':'Parece el proceso más terso, conducido por el gobernador Durazo; se registraron 6 precandidatos, uno de ellos del Verde (Omar del Valle Colosio).',
