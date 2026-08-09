@@ -1,0 +1,71 @@
+/* ============================================================
+   DAP — Color tokens
+   Despacho de Asuntos Públicos
+   Magenta + ink + neutral grays. Sharp, editorial, political.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---------------------------------------- */
+  --dap-magenta:        #C3236C; /* primary brand magenta */
+  --dap-magenta-bright: #CF3476; /* lively accent (display titles) */
+  --dap-magenta-700:    #9E1A56; /* hover / pressed darker */
+  --dap-magenta-500:    #C3236C;
+  --dap-magenta-300:    #E08AB5; /* light fill / borders */
+  --dap-magenta-100:    #F6D9E7; /* tint surface */
+  --dap-pink-tint:      #FBE9F1; /* faint pink wash (line motifs) */
+
+  /* ---- Wine / maroon secondary --------------------------- */
+  --dap-wine:           #5A2A3B; /* deep maroon (editorial bg) */
+  --dap-wine-800:       #3E1C29;
+
+  /* ---- Ink + pure ---------------------------------------- */
+  --dap-ink:            #111111; /* near-black surfaces & text */
+  --dap-black:          #000000;
+  --dap-white:          #FFFFFF;
+
+  /* ---- Neutral gray ramp --------------------------------- */
+  --dap-gray-50:        #F6F6F6;
+  --dap-gray-100:       #ECECEC;
+  --dap-gray-200:       #E2E2E2; /* light card surface */
+  --dap-gray-300:       #CFCFCF;
+  --dap-gray-400:       #A8A8A8;
+  --dap-gray-500:       #7A7A7A;
+  --dap-gray-600:       #555555;
+  --dap-gray-700:       #333333;
+  --dap-gray-800:       #1F1F1F;
+  --dap-gray-900:       #141414;
+
+  /* ---- Functional (inferred — not seen in source) -------- */
+  --dap-success:        #1F8A5B;
+  --dap-warning:        #C77A12;
+  --dap-danger:         #B3261E;
+  --dap-info:           var(--dap-wine);
+
+  /* ============================================================
+     Semantic aliases — use these in components
+     ============================================================ */
+  --color-primary:        var(--dap-magenta);
+  --color-primary-hover:   var(--dap-magenta-700);
+  --color-primary-tint:    var(--dap-magenta-100);
+  --color-accent:          var(--dap-magenta-bright);
+  --color-secondary:       var(--dap-wine);
+
+  --text-strong:   var(--dap-ink);
+  --text-body:     var(--dap-gray-700);
+  --text-muted:    var(--dap-gray-500);
+  --text-inverse:  var(--dap-white);
+  --text-on-magenta: var(--dap-white);
+
+  --surface-page:    var(--dap-white);
+  --surface-subtle:  var(--dap-gray-50);
+  --surface-card:    var(--dap-gray-200);
+  --surface-ink:     var(--dap-ink);
+  --surface-magenta: var(--dap-magenta);
+  --surface-wine:    var(--dap-wine);
+
+  --border-subtle:   var(--dap-gray-200);
+  --border-strong:   var(--dap-gray-400);
+  --border-ink:      var(--dap-ink);
+
+  --focus-ring:      var(--dap-magenta-bright);
+}
