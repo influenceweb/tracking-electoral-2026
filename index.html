@@ -25,6 +25,8 @@
   image-slot { width:100%; height:100%; }
   img { max-width:100%; }
   html, body { overflow-x:hidden; }
+  section[id^="sec-"] { scroll-margin-top:60px; }
+  .topnav-link:hover { color:#fff !important; }
   body { background:var(--dap-white); }
   .page-wrap { width:100%; }
   .band { padding:96px max(40px, calc((100% - 1240px) / 2)); }
@@ -47,8 +49,18 @@
 
 <div class="page-wrap">
 
+  <!-- ============ NAV SUPERIOR ============ -->
+  <nav class="topnav" style="position:sticky; top:0; z-index:50; background:var(--dap-ink); display:flex; flex-wrap:wrap; align-items:center; gap:4px 6px; padding:0 max(40px, calc((100% - 1240px) / 2));">
+    <a href="#top" style="font-family:var(--font-display); font-weight:800; font-size:14px; letter-spacing:0.04em; color:#fff; text-decoration:none; padding:16px 14px 16px 0; margin-right:auto;">MX<span style="color:var(--dap-magenta-bright);">27</span></a>
+    <a href="#sec-1" class="topnav-link" style="font-family:var(--font-body); font-weight:600; font-size:12.5px; color:rgba(255,255,255,0.72); text-decoration:none; padding:16px 12px;">Panorama nacional</a>
+    <a href="#sec-2" class="topnav-link" style="font-family:var(--font-body); font-weight:600; font-size:12.5px; color:rgba(255,255,255,0.72); text-decoration:none; padding:16px 12px;">Las 17 entidades</a>
+    <a href="#sec-3" class="topnav-link" style="font-family:var(--font-body); font-weight:600; font-size:12.5px; color:rgba(255,255,255,0.72); text-decoration:none; padding:16px 12px;">Competitividad de MORENA</a>
+    <a href="#sec-4" class="topnav-link" style="font-family:var(--font-body); font-weight:600; font-size:12.5px; color:rgba(255,255,255,0.72); text-decoration:none; padding:16px 12px;">Relaciones de apoyo</a>
+    <a href="#sec-5" class="topnav-link" style="font-family:var(--font-body); font-weight:600; font-size:12.5px; color:rgba(255,255,255,0.72); text-decoration:none; padding:16px 12px;">Aspirantes destacados</a>
+  </nav>
+
   <!-- ============ HERO ============ -->
-  <header class="band band-hero" style="background:var(--dap-gray-100); color:var(--dap-ink); position:relative; overflow:hidden;">
+  <header id="top" class="band band-hero" style="background:var(--dap-gray-100); color:var(--dap-ink); position:relative; overflow:hidden;">
     <div style="position:absolute; top:-120px; right:-80px; width:340px; height:340px; border-radius:50%; background:var(--dap-magenta); opacity:0.12;"></div>
     <div style="position:relative; max-width:820px; margin:0 auto;">
       <a href="https://asuntospublicos.net/" target="_blank" rel="noopener" style="display:inline-block; margin:0 auto 34px;"><img src="assets/dap-logo-magenta-transparent.png" alt="DAP — Despacho de Asuntos Públicos" style="height:58px; width:auto; display:block;"></a>
@@ -59,22 +71,6 @@
       <a href="https://asuntospublicos.net/" target="_blank" rel="noopener" style="font-family:var(--font-body); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dap-gray-500); margin-top:34px; display:inline-block; text-decoration:none;">DESPACHO DE ASUNTOS PÚBLICOS</a>
     </div>
   </header>
-
-  <!-- ============ SECCIÓN 1 — PANORAMA NACIONAL ============ -->
-  
-
-  <!-- ============ ÍNDICE ============ -->
-  <nav class="band" style="background:var(--dap-magenta); padding-top:80px; padding-bottom:80px;">
-    <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#fff;">Índice</div>
-    <div style="width:56px; height:3px; background:#fff; margin:12px 0 24px;"></div>
-    <ol style="list-style:none; margin:0; padding:0; border-top:1px solid rgba(255,255,255,0.28);">
-      <li style="border-bottom:1px solid rgba(255,255,255,0.28);"><a href="#sec-1" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:#fff; text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:rgba(255,255,255,0.6); min-width:28px;">01</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Panorama Nacional</span></a></li>
-      <li style="border-bottom:1px solid rgba(255,255,255,0.28);"><a href="#sec-2" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:#fff; text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:rgba(255,255,255,0.6); min-width:28px;">02</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Las 17 entidades en juego</span></a></li>
-      <li style="border-bottom:1px solid rgba(255,255,255,0.28);"><a href="#sec-3" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:#fff; text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:rgba(255,255,255,0.6); min-width:28px;">03</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Competitividad de MORENA</span></a></li>
-      <li style="border-bottom:1px solid rgba(255,255,255,0.28);"><a href="#sec-4" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:#fff; text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:rgba(255,255,255,0.6); min-width:28px;">04</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Relaciones de apoyo</span></a></li>
-      <li><a href="#sec-5" style="display:flex; align-items:baseline; gap:18px; padding:16px 4px; color:#fff; text-decoration:none;"><span style="font-family:var(--font-display); font-weight:800; font-size:16px; color:rgba(255,255,255,0.6); min-width:28px;">05</span><span style="font-family:var(--font-display); font-weight:700; font-size:clamp(17px,2vw,22px); letter-spacing:-0.01em;">Aspirantes destacados</span></a></li>
-    </ol>
-  </nav>
 
   <!-- ============ SECCIÓN 1 — PANORAMA NACIONAL ============ -->
   <section id="sec-1" class="band" style="background:var(--dap-white); scroll-margin-top:0;">
@@ -119,40 +115,43 @@
       <div style="font-family:var(--font-body); font-weight:700; font-size:14px; letter-spacing:0.02em; color:var(--dap-ink); margin-bottom:4px;">La elección federal intermedia y los cargos locales en juego</div>
       <div style="font-size:13px; color:var(--dap-gray-500); margin-bottom:22px;">Además de las 17 gubernaturas, en 2027 se renueva la Cámara de Diputados y un amplio conjunto de cargos locales.</div>
 
-      <div class="r-cargos" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
-        <div class="r-cargos-top" style="grid-column:span 3; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:14px;">
-          <div style="background:var(--dap-magenta); color:#fff; padding:24px 26px; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-family:var(--font-display); font-weight:900; font-size:46px; line-height:0.95; letter-spacing:-0.02em;">500</div>
-            <div style="font-size:14px; font-weight:600; margin-top:8px; line-height:1.35;">Diputaciones federales se renuevan en la Cámara de Diputados</div>
-          </div>
-          <div style="background:var(--dap-gray-200); color:var(--dap-ink); padding:24px 26px; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-family:var(--font-display); font-weight:900; font-size:40px; line-height:0.95; letter-spacing:-0.02em;">300</div>
-            <div style="font-size:13px; font-weight:600; margin-top:8px; line-height:1.35;">de mayoría relativa (distritos uninominales)</div>
-          </div>
-          <div style="background:var(--dap-gray-200); color:var(--dap-ink); padding:24px 26px; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-family:var(--font-display); font-weight:900; font-size:40px; line-height:0.95; letter-spacing:-0.02em;">200</div>
-            <div style="font-size:13px; font-weight:600; margin-top:8px; line-height:1.35;">de representación proporcional (plurinominales)</div>
-          </div>
-        </div>
-
-        <div style="background:var(--dap-ink); color:#fff; padding:22px 24px; display:flex; flex-direction:column; justify-content:center;">
-          <div style="font-family:var(--font-display); font-weight:900; font-size:38px; line-height:0.95; letter-spacing:-0.02em;">31</div>
-          <div style="font-size:13px; font-weight:600; margin-top:8px; line-height:1.35;">congresos locales renuevan a sus diputaciones</div>
-        </div>
-        <div style="background:var(--dap-ink); color:#fff; padding:22px 24px; display:flex; flex-direction:column; justify-content:center;">
-          <div style="font-family:var(--font-display); font-weight:900; font-size:38px; line-height:0.95; letter-spacing:-0.02em;">1,802</div>
-          <div style="font-size:13px; font-weight:600; margin-top:8px; line-height:1.35;">presidencias municipales</div>
-        </div>
-        <div style="background:var(--dap-ink); color:#fff; padding:22px 24px; display:flex; flex-direction:column; justify-content:center;">
-          <div style="font-family:var(--font-display); font-weight:900; font-size:38px; line-height:0.95; letter-spacing:-0.02em;">16</div>
-          <div style="font-size:13px; font-weight:600; margin-top:8px; line-height:1.35;">alcaldías en la Ciudad de México</div>
-        </div>
-
-        <div style="grid-column:span 3; background:var(--dap-wine); color:#fff; padding:22px 26px; display:flex; align-items:baseline; gap:20px;">
-          <div style="font-family:var(--font-display); font-weight:900; font-size:44px; line-height:0.95; letter-spacing:-0.02em;">1,818</div>
-          <div style="font-size:14px; font-weight:600; line-height:1.4;">divisiones administrativas locales sujetas a renovación de cargos</div>
-        </div>
-      </div>
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0; border-top:1px solid var(--dap-gray-200);">
+        <li style="display:flex; align-items:baseline; gap:16px; padding:16px 4px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:9px; height:9px; background:var(--dap-magenta); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:900; font-size:22px; color:var(--dap-ink); min-width:88px; font-variant-numeric:tabular-nums;">500</span>
+          <span style="font-size:15px; color:var(--dap-gray-700); line-height:1.4;">Diputaciones federales se renuevan en la Cámara de Diputados</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:14px 4px 14px 40px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:6px; height:6px; background:var(--dap-gray-400); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:800; font-size:18px; color:var(--dap-ink); min-width:64px; font-variant-numeric:tabular-nums;">300</span>
+          <span style="font-size:14px; color:var(--dap-gray-600); line-height:1.4;">de mayoría relativa (distritos uninominales)</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:14px 4px 14px 40px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:6px; height:6px; background:var(--dap-gray-400); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:800; font-size:18px; color:var(--dap-ink); min-width:64px; font-variant-numeric:tabular-nums;">200</span>
+          <span style="font-size:14px; color:var(--dap-gray-600); line-height:1.4;">de representación proporcional (plurinominales)</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:16px 4px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:9px; height:9px; background:var(--dap-magenta); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:900; font-size:22px; color:var(--dap-ink); min-width:88px; font-variant-numeric:tabular-nums;">31</span>
+          <span style="font-size:15px; color:var(--dap-gray-700); line-height:1.4;">congresos locales renuevan a sus diputaciones</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:16px 4px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:9px; height:9px; background:var(--dap-magenta); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:900; font-size:22px; color:var(--dap-ink); min-width:88px; font-variant-numeric:tabular-nums;">1,802</span>
+          <span style="font-size:15px; color:var(--dap-gray-700); line-height:1.4;">presidencias municipales</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:16px 4px; border-bottom:1px solid var(--dap-gray-200);">
+          <span style="flex:none; width:9px; height:9px; background:var(--dap-magenta); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:900; font-size:22px; color:var(--dap-ink); min-width:88px; font-variant-numeric:tabular-nums;">16</span>
+          <span style="font-size:15px; color:var(--dap-gray-700); line-height:1.4;">alcaldías en la Ciudad de México</span>
+        </li>
+        <li style="display:flex; align-items:baseline; gap:16px; padding:16px 4px; background:var(--dap-gray-50);">
+          <span style="flex:none; width:9px; height:9px; background:var(--dap-wine); transform:translateY(-1px);"></span>
+          <span style="font-family:var(--font-display); font-weight:900; font-size:22px; color:var(--dap-ink); min-width:88px; font-variant-numeric:tabular-nums;">1,818</span>
+          <span style="font-size:15px; color:var(--dap-gray-700); line-height:1.4;"><b style="color:var(--dap-ink);">divisiones administrativas locales</b> sujetas a renovación de cargos</span>
+        </li>
+      </ul>
     </div><div style="margin-top:56px;">
       <div style="font-family:var(--font-body); font-weight:700; font-size:14px; letter-spacing:0.02em; color:var(--dap-ink); margin-bottom:4px;">Preferencia de voto para diputado federal — tendencia</div>
       <div style="font-size:13px; color:var(--dap-gray-500); margin-bottom:22px;">Intención de voto nacional, tres mediciones. Cifras en porcentaje.</div>
@@ -317,23 +316,27 @@
   <section id="sec-5" class="band" style="background:var(--dap-gray-50); scroll-margin-top:0;">
     <x-import component-from-global-scope="DAPDesignSystem_621bb8.Eyebrow" hint-size="auto,16px">Sección 5 · Aspirantes destacados</x-import>
     <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(28px,3.2vw,42px); line-height:1.04; letter-spacing:-0.02em; color:var(--dap-ink); margin:14px 0 6px;">Galería de aspirantes</h2>
-    <p class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 30px; max-width:70ch;">Los tres aspirantes destacados por entidad. La franja de color corresponde al partido de cada aspirante.</p>
+    <p class="intro-p" style="font-size:15px; color:var(--dap-gray-500); margin:0 0 26px; max-width:70ch;">Elige una entidad en el menú para ver a sus tres aspirantes. La franja de color corresponde al partido de cada aspirante.</p>
 
-    <div style="display:flex; flex-direction:column; gap:36px;">
+    <div class="state-menu" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;">
       <sc-for list="{{ states }}" as="s" hint-placeholder-count="17">
-        <div>
-          <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:16px;">
-            <div style="font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:0.06em; text-transform:uppercase; color:var(--dap-ink);">{{ s.ab }}</div>
-            <div style="font-size:14px; color:var(--dap-gray-500);">{{ s.name }}</div>
-            <div style="flex:1; height:1px; background:var(--dap-gray-200);"></div>
-          </div>
-          <div class="r-gal" style="display:grid; grid-template-columns:repeat(6,1fr); gap:12px;">
-            <sc-for list="{{ s.asp }}" as="a" hint-placeholder-count="3">
+        <button type="button" onClick="{{ s.onSelect }}" style="{{ s.tabStyle }}">{{ s.name }}</button>
+      </sc-for>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:18px;">
+        <div style="font-family:var(--font-display); font-weight:800; font-size:20px; letter-spacing:0.06em; text-transform:uppercase; color:var(--dap-ink);">{{ sel.ab }}</div>
+        <div style="font-size:15px; color:var(--dap-gray-500);">{{ sel.name }}</div>
+        <div style="flex:1; height:1px; background:var(--dap-gray-200);"></div>
+      </div>
+      <div class="r-gal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <sc-for list="{{ sel.asp }}" as="a" hint-placeholder-count="3">
               <div style="border:1px solid var(--dap-gray-200);">
                 <div style="position:relative; width:100%; aspect-ratio:4 / 5; background:var(--dap-gray-100);">
-                  <image-slot id="{{ a.slotId }}" shape="rect" placeholder="Arrastra la foto"></image-slot>
+                  <image-slot id="{{ a.slotId }}" shape="rect" placeholder="Arrastra la foto" src="{{ a.photoSrc }}"></image-slot>
                   <div style="position:absolute; left:0; bottom:0; width:100%; background:{{ a.color }}; color:#fff; padding:4px 8px; display:flex; align-items:center; justify-content:space-between; pointer-events:none;">
-                    <span style="font-family:var(--font-display); font-weight:800; font-size:11px; letter-spacing:0.06em;">{{ s.ab }}</span>
+                    <span style="font-family:var(--font-display); font-weight:800; font-size:11px; letter-spacing:0.06em;">{{ sel.ab }}</span>
                     <span style="font-size:8px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; opacity:0.9;">{{ a.party }}</span>
                   </div>
                 </div>
@@ -348,10 +351,8 @@
                   </sc-if>
                 </div>
               </div>
-            </sc-for>
-          </div>
-        </div>
-      </sc-for>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -454,6 +455,9 @@ class Component extends DCLogic {
 
     const gobTone = { 'MORENA':'#9E2A4E','PAN':'#123E7C','MC':'#D97A1E','Verde':'#4A8C3F','PAN-PRI':'#5A2A3B' };
 
+    // Fotos de aspirantes como archivos (assets/aspirantes/)
+    const PHOTOS = {"ph-AGS-0":"assets/aspirantes/ph-AGS-0.jpg","ph-AGS-1":"assets/aspirantes/ph-AGS-1.jpg","ph-AGS-2":"assets/aspirantes/ph-AGS-2.jpg","ph-BC-0":"assets/aspirantes/ph-BC-0.jpg","ph-BC-1":"assets/aspirantes/ph-BC-1.jpg","ph-BC-2":"assets/aspirantes/ph-BC-2.jpg","ph-BCS-0":"assets/aspirantes/ph-BCS-0.jpg","ph-BCS-1":"assets/aspirantes/ph-BCS-1.jpg","ph-BCS-2":"assets/aspirantes/ph-BCS-2.jpg","ph-CAMP-0":"assets/aspirantes/ph-CAMP-0.jpg","ph-CAMP-1":"assets/aspirantes/ph-CAMP-1.jpg","ph-CAMP-2":"assets/aspirantes/ph-CAMP-2.jpg","ph-GRO-0":"assets/aspirantes/ph-GRO-0.jpg","ph-GRO-1":"assets/aspirantes/ph-GRO-1.jpg","ph-GRO-2":"assets/aspirantes/ph-GRO-2.jpg","ph-CHIH-0":"assets/aspirantes/ph-CHIH-0.jpg","ph-CHIH-1":"assets/aspirantes/ph-CHIH-1.jpg","ph-CHIH-2":"assets/aspirantes/ph-CHIH-2.jpg","ph-COL-0":"assets/aspirantes/ph-COL-0.webp","ph-COL-1":"assets/aspirantes/ph-COL-1.webp","ph-COL-2":"assets/aspirantes/ph-COL-2.webp","ph-MICH-0":"assets/aspirantes/ph-MICH-0.webp","ph-MICH-1":"assets/aspirantes/ph-MICH-1.jpg","ph-MICH-2":"assets/aspirantes/ph-MICH-2.jpg","ph-NAY-0":"assets/aspirantes/ph-NAY-0.jpg","ph-NAY-1":"assets/aspirantes/ph-NAY-1.jpg","ph-NAY-2":"assets/aspirantes/ph-NAY-2.jpg","ph-NL-0":"assets/aspirantes/ph-NL-0.jpg","ph-NL-1":"assets/aspirantes/ph-NL-1.jpg","ph-NL-2":"assets/aspirantes/ph-NL-2.jpg","ph-QRO-0":"assets/aspirantes/ph-QRO-0.jpg","ph-QRO-1":"assets/aspirantes/ph-QRO-1.jpg","ph-QRO-2":"assets/aspirantes/ph-QRO-2.jpg","ph-QROO-0":"assets/aspirantes/ph-QROO-0.jpg","ph-QROO-1":"assets/aspirantes/ph-QROO-1.jpg","ph-QROO-2":"assets/aspirantes/ph-QROO-2.jpg","ph-SLP-0":"assets/aspirantes/ph-SLP-0.jpg","ph-SLP-1":"assets/aspirantes/ph-SLP-1.jpg","ph-SLP-2":"assets/aspirantes/ph-SLP-2.jpg","ph-SIN-0":"assets/aspirantes/ph-SIN-0.jpg","ph-SIN-1":"assets/aspirantes/ph-SIN-1.jpg","ph-SIN-2":"assets/aspirantes/ph-SIN-2.jpg","ph-SON-0":"assets/aspirantes/ph-SON-0.jpg","ph-SON-1":"assets/aspirantes/ph-SON-1.jpg","ph-SON-2":"assets/aspirantes/ph-SON-2.jpg","ph-TLAX-0":"assets/aspirantes/ph-TLAX-0.jpg","ph-TLAX-1":"assets/aspirantes/ph-TLAX-1.webp","ph-TLAX-2":"assets/aspirantes/ph-TLAX-2.jpg","ph-ZAC-0":"assets/aspirantes/ph-ZAC-0.jpg","ph-ZAC-1":"assets/aspirantes/ph-ZAC-1.jpg","ph-ZAC-2":"assets/aspirantes/ph-ZAC-2.jpg"};
+
     // Cargo político (agosto 2026) y cuenta de X por aspirante [cargo, handle]
     const EXTRA = {
       AGS:[['Senador de la República','tmartindelcampo'],['Presidente Municipal de Aguascalientes (2º periodo, 2024-2027)','LeoMontanezC'],['Senadora de la República (con licencia desde jun-2026)','nora_ruvalcaba']],
@@ -496,9 +500,11 @@ class Component extends DCLogic {
       const ex = EXTRA[s.ab] || [];
       const asp = s.asp.map((a,i) => {
         const handle = ex[i] ? ex[i][1] : '';
+        const sid = 'ph-'+s.ab+'-'+i;
         return {
           name:a[0], party:a[1]||'—', color:a[1]?pc(a[1]):'#7A7A7A',
-          slotId: 'ph-'+s.ab+'-'+i,
+          slotId: sid,
+          photoSrc: (PHOTOS[sid] || ''),
           cargo: ex[i] ? ex[i][0] : '',
           xHandle: handle ? '@'+handle : '',
           xUrl: handle ? 'https://x.com/'+handle : '',
