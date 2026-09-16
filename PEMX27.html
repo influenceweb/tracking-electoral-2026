@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panorama Electoral MX27 | DAP</title>
+<style>
+  :root {
+    --magenta: #C3236C;
+    --magenta-claro: #CF3476;
+    --magenta-oscuro: #9E1A56;
+    --ink: #111111;
+    --blanco: #FFFFFF;
+    --gris-claro: #E2E2E2;
+    --wine: #5A2A3B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--blanco);
+    line-height: 1.5;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    background: var(--ink);
+    color: var(--blanco);
+    padding: 18px 0;
+  }
+
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .brand span {
+    color: var(--magenta-claro);
+  }
+
+  .tagline {
+    font-size: 12px;
+    color: var(--gris-claro);
+    letter-spacing: 0.03em;
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .tagline { display: block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--ink);
+    color: var(--blanco);
+    padding: 48px 0 64px;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .hero-form {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .hero-copy {
+    margin-bottom: 8px;
+  }
+
+  .eyebrow {
+    color: var(--magenta-claro);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  @media (min-width: 900px) {
+    .hero h1 { font-size: 38px; }
+  }
+
+  .hero p.lead {
+    color: var(--gris-claro);
+    font-size: 16px;
+    max-width: 480px;
+  }
+
+  .lead-list {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lead-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gris-claro);
+    font-size: 14.5px;
+  }
+
+  .lead-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--magenta-claro);
+  }
+
+  /* ---------- FORM CARD ---------- */
+  .form-card {
+    background: var(--gris-claro);
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 28px 24px;
+  }
+
+  .form-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .field input[type="text"],
+  .field input[type="email"] {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 15px;
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    background: var(--blanco);
+    color: var(--ink);
+    font-family: inherit;
+  }
+
+  .field input:focus {
+    outline: none;
+    border-color: var(--magenta);
+    box-shadow: 0 0 0 3px rgba(195,35,108,0.15);
+  }
+
+  .field-error {
+    color: var(--magenta-oscuro);
+    font-size: 12.5px;
+    margin-top: 5px;
+    display: none;
+  }
+
+  .field.invalid input {
+    border-color: var(--magenta-oscuro);
+  }
+
+  .field.invalid .field-error {
+    display: block;
+  }
+
+  .checkbox-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .checkbox-field input {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--magenta);
+    flex-shrink: 0;
+  }
+
+  .checkbox-field label {
+    font-size: 13px;
+    color: #333;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--magenta);
+    color: var(--blanco);
+    border: none;
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .btn-submit:hover {
+    background: var(--magenta-oscuro);
+  }
+
+  .btn-submit:disabled {
+    background: #999;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+    color: var(--magenta-oscuro);
+    display: none;
+  }
+
+  .form-note {
+    font-size: 11.5px;
+    color: #555;
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section {
+    padding: 64px 0;
+  }
+
+  /* ---------- ABOUT DAP ---------- */
+  .about {
+    background: var(--blanco);
+    color: var(--ink);
+  }
+
+  .about .container {
+    max-width: 1100px;
+  }
+
+  .about h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--ink);
+    max-width: 700px;
+  }
+
+  .about p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 700px;
+    margin-bottom: 36px;
+  }
+
+  .instagram-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  @media (min-width: 800px) {
+    .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    background: var(--ink);
+    color: var(--blanco);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .contact-info h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-list li {
+    font-size: 14.5px;
+    color: var(--gris-claro);
+  }
+
+  .contact-list a {
+    color: var(--blanco);
+    text-decoration: none;
+  }
+
+  .contact-list a:hover {
+    color: var(--magenta-claro);
+  }
+
+  .social h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  @media (min-width: 480px) {
+    .social-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--blanco);
+    transition: background 0.15s ease;
+  }
+
+  .social-link:hover {
+    background: var(--magenta-oscuro);
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--magenta-claro);
+    flex-shrink: 0;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--gris-claro);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="brand">DAP</div>
+      <div class="tagline">MX27</div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-form">
+        <div class="hero-copy">
+          <div class="eyebrow">Producto de inteligencia electoral</div>
+          <h1>Panorama Electoral MX27</h1>
+          <p class="lead">El mapa electoral de las distintas gubernaturas que se renuevan en 2027.</p>
+          <ul class="lead-list">
+            <li>Panorama nacional</li>
+            <li>Las 17 entidades que se renuevan</li>
+            <li>Competitividad de MORENA</li>
+            <li>Relaciones de apoyo</li>
+            <li>Aspirantes destacados</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <h2>Regístrate</h2>
+
+          <form id="lead-form" novalidate>
+            <div class="field" id="field-nombre">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required autocomplete="name">
+              <div class="field-error">Ingresa tu nombre.</div>
+            </div>
+
+            <div class="field" id="field-empresa">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization">
+            </div>
+
+            <div class="field" id="field-email">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <div class="field-error">Ingresa un correo válido.</div>
+            </div>
+
+            <div class="checkbox-field" id="field-consent">
+              <input type="checkbox" id="consent" name="consent">
+              <label for="consent">Acepto recibir comunicaciones o información de valor de DAP.</label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">Ver Panorama Electoral MX27</button>
+
+            <div class="form-status" id="form-status"></div>
+            <p class="form-note">Tus datos se usan únicamente para darte acceso al reporte.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE DAP ================= -->
+  <section class="about">
+    <div class="container">
+      <h2>Somos DAP</h2>
+      <p>Analizamos el entorno político, gubernamental y social, e identificamos a los stakeholders más relevantes para cada industria, con el objetivo de lograr una vinculación efectiva que genere sinergia e influencia positiva entre todos. Contamos con altos estándares profesionales y éticos a la par de una alta eficacia en la entrega de soluciones.</p>
+
+      <div class="instagram-grid">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdU6wqdDUrw/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:400px; min-width:326px; padding:0; width:100%;"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdKqAmEjdXJ/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:400px; min-width:326px; padding:0; width:100%;"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdFYCSDlFZd/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:400px; min-width:326px; padding:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Contacto</h2>
+        <ul class="contact-list">
+          <li>Website: <a href="https://asuntospublicos.net/" target="_blank" rel="noopener">asuntospublicos.net</a></li>
+          <li>Correo: <a href="mailto:info@asuntospublicos.net">info@asuntospublicos.net</a></li>
+          <li>Teléfono: <a href="tel:+5593825672">+55 938 256 72</a></li>
+        </ul>
+      </div>
+
+      <div class="social">
+        <h2>Síguenos</h2>
+        <div class="social-grid">
+          <a class="social-link" href="https://www.instagram.com/dap_mex/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.8.22 2.43.46.65.25 1.2.6 1.72 1.12.52.52.87 1.07 1.12 1.72.24.63.41 1.36.46 2.43C21.99 8.95 22 9.3 22 12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.8-.46 2.43a4.6 4.6 0 0 1-1.12 1.72 4.6 4.6 0 0 1-1.72 1.12c-.63.24-1.36.41-2.43.46C15.05 21.99 14.7 22 12 22s-3.05-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.46a4.6 4.6 0 0 1-1.72-1.12 4.6 4.6 0 0 1-1.12-1.72c-.24-.63-.41-1.36-.46-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.8.46-2.43.25-.65.6-1.2 1.12-1.72a4.6 4.6 0 0 1 1.72-1.12c.63-.24 1.36-.41 2.43-.46C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social-link" href="https://www.facebook.com/DespachoAsuntosPublicos" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.4h2.8l.5-3.4h-3.3V7.9c0-.98.27-1.65 1.68-1.65h1.8V3.24C15.98 3.16 14.9 3 13.6 3c-2.7 0-4.55 1.65-4.55 4.68v2.58H6.2v3.4h2.85V22h4.45z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a class="social-link" href="https://x.com/DAsuntoPublico" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7 8 7.6 12h-6l-4.7-6.9L6.3 22H3.2l7.5-8.6L3 2h6.1l4.3 6.3L18.9 2zm-2.1 18h1.7L7.3 4H5.5l11.3 16z"/></svg>
+            <span>X</span>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/company/despacho-asuntos-publicos/home/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.5 4.78 5.86V21H18v-5.6c0-1.34-.02-3.07-1.88-3.07-1.88 0-2.17 1.47-2.17 2.98V21H10V9z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@OjoPol%C3%ADticoDAP" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M22.5 6.2a2.8 2.8 0 0 0-1.98-2C18.8 3.7 12 3.7 12 3.7s-6.8 0-8.52.5A2.8 2.8 0 0 0 1.5 6.2 29 29 0 0 0 1 11.5a29 29 0 0 0 .5 5.3 2.8 2.8 0 0 0 1.98 2c1.72.5 8.52.5 8.52.5s6.8 0 8.52-.5a2.8 2.8 0 0 0 1.98-2 29 29 0 0 0 .5-5.3 29 29 0 0 0-.5-5.3zM9.8 15V8l6.4 3.5-6.4 3.5z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a class="social-link" href="https://whatsapp.com/channel/0029Vaq5pBfEgGfHnuXQvM22" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.15-.15.3-.4.46-.6.15-.2.2-.34.3-.56.1-.23.05-.4-.04-.56-.1-.15-.6-1.45-.82-1.98-.2-.5-.4-.44-.56-.44-.15 0-.4 0-.6.02-.2.02-.5.1-.77.4-.27.3-1.03 1-1.03 2.44 0 1.44 1.05 2.83 1.2 3.03.15.2 2.03 3.1 4.93 4.22 2.9 1.12 2.9.75 3.42.7.53-.05 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.27-.2-.57-.35zM12.03 2C6.5 2 2 6.47 2 12c0 2.03.6 3.9 1.6 5.48L2.06 22l4.66-1.5A9.9 9.9 0 0 0 12.03 22c5.53 0 10.03-4.47 10.03-10S17.56 2 12.03 2z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      DAP | Influence &mdash; Panorama Electoral MX27
+    </div>
+  </footer>
+
+<script>
+(function () {
+  const REDIRECT_URL = "https://influenceweb.github.io/tracking-electoral-2026/";
+
+  const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwYuR2OZCnqKIMQhZpHvu-pRaeUBxfarxjAPJZPqQLiyPxvd20OuX1VPzEZbXhSBuXAsQ/exec";
+
+  const form = document.getElementById('lead-form');
+  const nombreInput = document.getElementById('nombre');
+  const empresaInput = document.getElementById('empresa');
+  const consentInput = document.getElementById('consent');
+  const emailInput = document.getElementById('email');
+  const submitBtn = document.getElementById('submit-btn');
+  const statusEl = document.getElementById('form-status');
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setInvalid(fieldId, invalid) {
+    document.getElementById(fieldId).classList.toggle('invalid', invalid);
+  }
+
+  function validate() {
+    let valid = true;
+
+    const nombreOk = nombreInput.value.trim().length > 0;
+    setInvalid('field-nombre', !nombreOk);
+    if (!nombreOk) valid = false;
+
+    const emailOk = emailPattern.test(emailInput.value.trim());
+    setInvalid('field-email', !emailOk);
+    if (!emailOk) valid = false;
+
+    statusEl.style.display = 'none';
+
+    return valid;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const formData = new FormData();
+    formData.append('nombre', nombreInput.value.trim());
+    formData.append('empresa', empresaInput.value.trim());
+    formData.append('email', emailInput.value.trim());
+    formData.append('consent', consentInput.checked ? 'si' : 'no');
+    formData.append('timestamp', new Date().toISOString());
+
+    fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).catch(function () {
+      // no-cors: no hay respuesta legible; se ignora cualquier error de red
+    }).finally(function () {
+      window.location.href = REDIRECT_URL;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
